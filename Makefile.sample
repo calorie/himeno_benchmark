@@ -1,0 +1,19 @@
+OBJS = himenoBMTxps.o
+
+CC = mpicc
+RM = /bin/rm
+PROG = bmt
+
+CFLAGS = -O3
+LDFLAGS = ${CFLAGS}
+
+all : ${PROG}
+
+${PROG} : ${OBJS} param.h
+	${CC} -o $@ ${OBJS} ${LDFLAGS}
+
+.c.o : param.h
+	${CC} -c ${CFLAGS} $<
+
+clean :
+	${RM} -f ${PROG} ${OBJS} core
