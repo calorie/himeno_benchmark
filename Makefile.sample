@@ -1,4 +1,4 @@
-OBJS = himenoBMTxps.o
+OBJS = himenoBMTxps.o main.o
 
 CC = mpicc
 RM = /bin/rm
